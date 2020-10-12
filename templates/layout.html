@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link href="/static/Logo.ico" rel="icon" />
+    <link href="/static/styles.css" rel="stylesheet" type="text/css" />
+    <title>{% block title %}{% endblock %}</title>
+  </head>
+  <body>
+    <nav>
+      <div class="bar-item"><a href="/">QUOTE</a></div>
+      <div class="bar-item"><a href="/modify">MODIFY</a></div>
+    </nav>
+    <main>
+      <h1>{% block header %}{% endblock %}</h1>
+      <div class="big-container">
+        {% block main %}{% endblock %}
+      </div>
+    </main>
+    <footer>
+      GLASS50 - 2020
+    </footer>
+    {% block flaskvariables %}{% endblock %} {% block functionality %}{%
+    endblock %}
+  </body>
+</html>

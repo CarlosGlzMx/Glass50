@@ -1,0 +1,25 @@
+{% extends "layout.html" %} {% block header %} Modify the sheet {% endblock %}
+{% block main %}
+<h3>Modify {{ thickness["name"] }} - {{ thickness["thickness"] }}mm</h3>
+<form action="/change_s" method="post">
+  <div class="form-section">
+    <div class="input-div">
+      <label>PRICE:</label><br />
+      <input type = "number" min = "1" step = "1" name = "price" placeholder =
+      "Price" autocomplete = "off" class = "inputs" required value = {{
+      thickness["cost"] }}>
+    </div>
+  </div>
+  <div class="form-section">
+    <div class="input-div">
+      <label>MODIFY:</label><br />
+      <button type="submit" class="buttons" name="modifying">Modify</button>
+    </div>
+    <div class="input-div">
+      <label>DELETE:</label><br />
+      <button type="submit" class="delete" name="deleting">Delete</button>
+    </div>
+  </div>
+</form>
+{% endblock %} {% block flaskvariables %} {% endblock %} {% block functionality
+%} {% endblock %}

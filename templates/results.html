@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Results
+{% endblock %}
+
+{% block header %}
+Possible quotes
+{% endblock %}
+
+{% block main %}
+<h3>Quote for {{length}}m x {{height}}m</h3>
+<table>
+    {% if not(quotes) %}
+    <tr>
+        <td><h5>No results were found</h5></td>
+    </tr>
+    <tr>
+        <td><h5>Verify that details can coexist</h5></td>
+    </tr>
+    {% else %}
+    <tr>
+        <td>Sheet</td>
+        <td>Thickness</td>
+        <td>Detail 1</td>
+        <td>Detail 2</td>
+        <td>Material</td>
+        <td>Details</td>
+        <td>Total</td>
+    </tr>
+    {% for quote in quotes %}
+    <tr>
+        <td>{{ quote["type"] }}</td>
+        <td>{{ quote["thickness"] }}mm</td>
+        <td>{{ quote["details"][0] }}</td>
+        <td>{{ quote["details"][1] }}</td>
+        <td>{{ quote["material_cost"]|mxn }}</td>
+        <td>{{ quote["detail_cost"]|mxn }}</td>
+        <td>{{ quote["cost"]|mxn }}</td>
+    </tr>
+    {% endfor %}
+    {% endif %}
+</table>
+{% endblock %}
+
+{% block flaskvariables %}
+{% endblock %}
+
+{% block functionality %}
+{% endblock %}

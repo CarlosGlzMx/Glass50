@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block header %}
+Modify the detail
+{% endblock %}
+
+{% block main %}
+<h3>Modify {{ detail["name"] }} - {{ detail["thickness"] }}mm</h3>
+<form action = "/change_d" method = "post">
+    <div class = "form-section">
+        <div class = "input-div">
+        <label>PRICE:</label><br/>
+        <input type = "number" min = "1" step = "1" name = "price" placeholder = "Price" autocomplete = "off" class = "inputs" required value = {{ detail["cost"] }}>
+        </div>
+        <div class="input-div">
+        <label>TYPE:</label><br>
+        <select class = "inputs" required name = "cost_type">
+        <option value = "Cuadrado">Per squared m</option>
+        <option value = "Lineal">Per linear m</option>
+        </select>
+        </div>
+    </div>
+    <div class = "form-section">
+        <div class="input-div">
+        <label>MODIFY:</label><br>
+        <button type = "submit" class = "buttons" name = "modifying">Modify</button>
+        </div>
+        <div class="input-div">
+        <label>DELETE:</label><br>
+        <button type = "submit" class = "delete" name = "deleting">Delete</button>
+        </div>
+    </div>
+</form>
+{% endblock %}
+
+{% block flaskvariables %}
+{% endblock %}
+
+{% block functionality %}
+{% endblock %}

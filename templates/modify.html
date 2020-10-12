@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Modify
+{% endblock %}
+
+{% block header %}
+Modify prices
+{% endblock %}
+
+{% block main %}
+<h3>Select the price to modify</h3>
+<form action = "/modify" method = "post">
+<!-- Part one: Sheets -->
+    <button class = "add" type = "submit" name = "add_sheet">+</button>
+    <button class = "toggle" type = "button">Sheets</button>
+    <div class = "contents">
+        {% for thickness in thicknesses %}
+        <button class = "long-button" name = "change_sheet" value = {{ thickness["id"] }}>{{ thickness["name"] }} - {{ thickness["thickness"] }}mm</button>
+        {% endfor %}
+    </div>
+<!-- Part two: Details -->
+    <button class = "add" type = "submit" name = "add_detail">+</button>
+    <button class = "toggle" type = "button">Details</button>
+    <div class = "contents">
+        {% for detail in details %}
+        <button class = "long-button" name = "change_detail" value = {{ detail["id"] }}>{{ detail["name"] }} de {{ detail["thickness"] }}mm </button>
+        {% endfor %}
+    </div>
+</form>
+{% endblock %}
+
+{% block flaskvariables %}
+{% endblock %}
+
+{% block functionality %}
+<script src="/static/modify.js" type = "text/javascript"></script>
+{% endblock %}

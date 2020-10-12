@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block header %}
+Add new sheet
+{% endblock %}
+
+{% block main %}
+<h3>Insert the values for the new sheet</h3>
+<form action = "/add_s" method = "post">
+    <div class = "form-section">
+        <div class = "input-div">
+        <label>NAME:</label><br/>
+        <input type = "text" name = "name" placeholder = "Name" autocomplete = "off" class = "inputs" required>
+        </div>
+        <div class = "input-div">
+        <label>THICKNESS:</label><br/>
+        <input type = "number" min = "1" step = "1" name = "thickness" placeholder = "Thickness" autocomplete = "off" class = "inputs" required>
+        </div>
+        <div class = "input-div">
+        <label>PRICE:</label><br/>
+        <input type = "number" min = "1" step = "1" name = "price" placeholder = "Price" autocomplete = "off" class = "inputs" required>
+        </div>
+    </div>
+    <div class = "form-section">
+        <div class="input-div">
+        <label>ADD:</label><br>
+        <button type = "submit" class = "buttons">Add</button>
+        </div>
+    </div>
+</form>
+{% endblock %}
+
+{% block flaskvariables %}
+{% endblock %}
+
+{% block functionality %}
+{% endblock %}
